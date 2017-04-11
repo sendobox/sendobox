@@ -28,13 +28,18 @@ These instructions will get you a copy of the project up and running on your loc
 ### Dependencies
 
 ```
-pip install -r example-requirements.txt
+pip install -r requirements.txt
 ```
 
 List all dependencies:
 
-* test
-
+```
+matplotlib
+snappy
+geojson
+shapely
+sentinelsat
+```
 
 ### Installing
 
