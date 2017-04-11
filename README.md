@@ -1,4 +1,4 @@
-# Project Title
+# sendobox - Sentinel Download Toolbox
 
 Sentinel Download ToolBox (SenDoBox) - A batch processing tool for downloading Sentinel satellite data
 
