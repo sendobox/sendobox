@@ -1,0 +1,9 @@
+#
+####### requirements.txt #######
+#
+###### Requirements without Version Specifiers ######
+matplotlib
+snappy
+geojson
+shapely
+sentinelsat
