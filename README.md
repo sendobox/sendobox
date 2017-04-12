@@ -1,6 +1,6 @@
 # sendobox - Sentinel Download Toolbox
 
-[https://sendobox.github.io/sendobox/](https://sendobox.github.io/sendobox/)
+[Documentation sendobox.github.io](https://sendobox.github.io/sendobox/)
 
 Sentinel Download ToolBox (SenDoBox) - A batch processing tool for downloading Sentinel satellite data
 
