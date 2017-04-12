@@ -21,11 +21,20 @@ These instructions will get you a copy of the project up and running on your loc
 * Area of interest (aoi) from [geojson](http://geojson.io/#map=2/20.0/0.0)
 * Configure your parameter textfile:
 
-```
-1 User
-2 Password
-...
-```
+| Line  | Second Header |
+| ------------- | ------------- |
+| 1  | Username  |
+| 2  | Password  |
+| 3  | start date dd.mm.yyyy  |
+| 4  | end date dd.mm.yyyy  |
+| 5  | area of intrest  |
+| 6  | platform  |
+| 7  | maximum cloud coverage  |
+| 8  | download path  |
+| 9  | image id  |
+| 10  | download options  |
+| 11  | preprocessing path  |
+| 12  | preprocessing options  |
 
 ### Dependencies
 
