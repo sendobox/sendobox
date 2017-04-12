@@ -1,6 +1,6 @@
 # sendobox - Sentinel Download Toolbox
 
-[https://sendobox.github.io/sendobox/](https://sendobox.github.io/sendobox/)
+[View on Github](https://github.com/sendobox/sendobox)
 
 Sentinel Download ToolBox (SenDoBox) - A batch processing tool for downloading Sentinel satellite data
 
@@ -13,17 +13,20 @@ The software is licensed under the GNU General Public License. If you use this p
 ## Table of Contents
 
 * [Gettings Started](#getting-started)
-* [Dependencies](#depedencies)
+* [Dependencies](#dependencies)
 * [Installation](#installation)
   * [Requirements](#requirements)
   * [Built With](#built-with)
 * [Guide & Example](#guide-&-example)
+* [Frontend Development](#frontend-development)
+  * [Graphical User Interface GUI](#graphical-user-interface-gui)
+  * [Command Line Tool](#command-line-tool)
+* [Backend Development](#backend-development)
 * [Appendix](#appendix)
   * [Contributing](#contributing)
   * [Authors](#authors)
   * [License](#license)
   * [Acknowledgments](#acknowledgments)
-
 
 
 
@@ -75,7 +78,7 @@ Installing snappy
 Link to readme install file?
 ```
 
-## Guide & example
+## Guide & Example
 
 ```
 GUI
@@ -85,6 +88,13 @@ GUI
 console
 ```
 
+## Frontend Development
+
+### Graphical User Interface GUI
+
+### Command Line Tool
+
+## Backend Development
 
 ## Appendix
 
