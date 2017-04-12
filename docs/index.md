@@ -10,10 +10,22 @@ sendobox is a tool for downloading a vast amount of Sentinel satellite data in a
 
 The software is licensed under the GNU General Public License. If you use this project for your research, please cite this accordingly.
 
-## Table of contents
+## Table of Contents
 
 * [Gettings Started](#getting-started)
 * [Dependencies](#depedencies)
+* [Installation](#installation)
+  * [Requirements](#requirements)
+  * [Built With](#built-with)
+* [Guide & Example](#guide-&-example)
+* [Appendix](#appendix)
+  * [Contributing](#contributing)
+  * [Authors](#authors)
+  * [License](#license)
+  * [Acknowledgments](#acknowledgments)
+
+
+
 
 ## Getting Started
 
@@ -33,6 +45,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Dependencies
 
+#### Requirements
 ```
 pip install -r requirements.txt
 ```
@@ -47,7 +60,12 @@ shapely
 sentinelsat
 ```
 
-### Installing
+#### Built With:
+
+* [python2.7](https://www.python.org/download/releases/2.7/) - The framework used
+* [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Access to the API of Copernicus Data Hub
+
+### Installation
 
 A step by step series of examples that tell you have to get a development env running. 
 
@@ -68,17 +86,14 @@ console
 ```
 
 
+## Appendix
 
-## Built With
 
-* [python2.7](https://www.python.org/download/releases/2.7/) - The framework used
-* [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Access to the API of Copernicus Data Hub
-
-## Contributing
+### Contributing
 
 Contributions (bug reports, bug fixes, improvements, etc.) are very welcome and should be submitted in the form of new issues and/or pull requests on GitHub.
 
-## Authors
+### Authors
 
 * **Buergmann Tatjana** - *Initial work* 
 * **Stark Thomas** - *Initial work* - [github](https://github.com/stark-t)
@@ -89,12 +104,12 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 The sendobox software was written by Tatjana Buergmann and Thomas Stark under supervision of Michael Schmitt in the frame of a study project in photogrammetry and remote sensing at Technical University of Munich.
 
-## License
+### License
 
 The software is licensed under the GNU General Public License v3 or later. If you are interested in licensing the software for commercial purposes, without disclosing your modifications, please contact the authors.
 
 
-## Acknowledgments
+### Acknowledgments
 
 * [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Access to the API of Copernicus Data Hub
 * [Andreas Baumann](http://forum.step.esa.int/users/abgbaumann/activity) - Adaption of the mosaic procedure
