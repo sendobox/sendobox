@@ -1,103 +1,99 @@
-COLMAP
-======
+# sendobox - Sentinel Download Toolbox
 
-.. figure:: images/sparse.png
-    :alt: Sparse reconstruction of central Rome.
-    :figclass: align-center
+[https://sendobox.github.io/sendobox/](https://sendobox.github.io/sendobox/)
 
-    Sparse model of central Rome using 21K photos produced by COLMAP's SfM
-    pipeline.
+Sentinel Download ToolBox (SenDoBox) - A batch processing tool for downloading Sentinel satellite data
 
-.. figure:: images/dense.png
-    :alt: Dense reconstruction of landmarks.
-    :figclass: align-center
+## About
 
-    Dense models of several landmarks produced by COLMAP's MVS pipeline.
+sendobox is a tool for downloading a vast amount of Sentinel satellite data in an easy and structured way. With a specified area of intrest (aoi) and a starting and end date, all queried Sentinel images can be downloaded in one go. Some preprocessing functions for creating subsets and mosaic are also included.
+
+The software is licensed under the GNU General Public License. If you use this project for your research, please cite this accordingly.
 
 
-About
------
+## Getting Started
 
-COLMAP is a general-purpose Structure-from-Motion (SfM) and Multi-View Stereo
-(MVS) pipeline with a graphical and command-line interface. It offers a wide
-range of features for reconstruction of ordered and unordered image collections.
-The software is licensed under the GNU General Public License. If you use this
-project for your research, please cite::
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-    @inproceedings{schoenberger2016sfm,
-        author = {Sch\"{o}nberger, Johannes Lutz and Frahm, Jan-Michael},
-        title = {Structure-from-Motion Revisited},
-        booktitle={IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-        year={2016},
-    }
+* First get all dependencies working.
+* It is recommended to also install snappy, a link between python and SNAP (ESA Toolbox), for preprocessing the downloaded data.
 
-    @inproceedings{schoenberger2016mvs,
-        author = {Sch\"{o}nberger, Johannes Lutz and Zheng, Enliang and Pollefeys, Marc and Frahm, Jan-Michael},
-        title = {Pixelwise View Selection for Unstructured Multi-View Stereo},
-        booktitle={European Conference on Computer Vision (ECCV)},
-        year={2016},
-    }
+* Area of interest (aoi) from [geojson](http://geojson.io/#map=2/20.0/0.0)
+* Configure your parameter textfile:
 
-The latest source code is available at `GitHub
-<https://github.com/colmap/colmap>`_. COLMAP builds on top of existing works and
-when using specific algorithms within COLMAP, please also cite the original
-authors, as specified in the source code.
+```
+1 User
+2 Password
+...
+```
 
+### Dependencies
 
-Download
---------
+```
+pip install -r requirements.txt
+```
 
-Executables and other resources can be downloaded from
-http://people.inf.ethz.ch/jschoenb/colmap/.
+List all dependencies:
 
+```
+matplotlib
+snappy
+geojson
+shapely
+sentinelsat
+```
 
-Getting Started
----------------
+### Installing
 
-1. Download the `pre-built binaries
-   <http://people.inf.ethz.ch/jschoenb/colmap/>`_ or build the library manually
-   (see :ref:`Installation <installation>`).
-2. Download one of the provided datasets (see :ref:`Datasets <datasets>`)
-   or use your own images.
-3. Watch the short introductory video at
-   `YouTube <https://www.youtube.com/watch?v=P-EC0DzeVEU>`_ or read the
-   :ref:`Tutorial <tutorial>` for more details.
+A step by step series of examples that tell you have to get a development env running. 
 
+Installing snappy
 
-Support
--------
+```
+Link to readme install file?
+```
 
-Please, use the `Google Group <https://groups.google.com/forum/#!forum/colmap>`_
-(colmap@googlegroups.com) for questions and the `GitHub issue tracker
-<https://github.com/colmap/colmap>`_ for bug reports, feature
-requests/additions, etc.
+## Guide & example
+
+```
+GUI
+```
+
+```
+console
+```
 
 
-Contents
---------
 
-.. toctree::
-   :maxdepth: 2
+## Built With
 
-   install
-   tutorial
-   database
-   cameras
-   format
-   datasets
-   gui
-   cli
-   faq
-   contribution
-   license
-   bibliography
+* [python2.7](https://www.python.org/download/releases/2.7/) - The framework used
+* [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Access to the API of Copernicus Data Hub
+
+## Contributing
+
+Contributions (bug reports, bug fixes, improvements, etc.) are very welcome and should be submitted in the form of new issues and/or pull requests on GitHub.
+
+## Authors
+
+* **Buergmann Tatjana** - *Initial work* 
+* **Stark Thomas** - *Initial work* - [github](https://github.com/stark-t)
+
+* **Dr.-Ing. Michael Schmitt** - *Supervision*
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+The sendobox software was written by Tatjana Buergmann and Thomas Stark under supervision of Michael Schmitt in the frame of a study project in photogrammetry and remote sensing at Technical University of Munich.
+
+## License
+
+The software is licensed under the GNU General Public License v3 or later. If you are interested in licensing the software for commercial purposes, without disclosing your modifications, please contact the authors.
 
 
-Acknowledgments
----------------
+## Acknowledgments
 
-The library was written by `Johannes L. Schönberger
-<http://people.inf.ethz.ch/jschoenb/>`_. Funding was provided by his PhD advisors
-`Jan-Michael Frahm <http://frahm.web.unc.edu/>`_ and
-`Marc Pollefeys <https://www.inf.ethz.ch/personal/marc.pollefeys/>`_.
+* [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Access to the API of Copernicus Data Hub
+* [Andreas Baumann](http://forum.step.esa.int/users/abgbaumann/activity) - Adaption of the mosaic procedure
+* Hat tip to anyone who's code was used
+
 
