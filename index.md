@@ -17,11 +17,15 @@ The software is licensed under the GNU General Public License. If you use this p
 * [Installation](#installation)
   * [Requirements](#requirements)
   * [Built With](#built-with)
-* [Guide & Example](#guide-&-example)
+* [Guide and Example](#guide-and-example)
 * [Frontend Development](#frontend-development)
   * [Graphical User Interface GUI](#graphical-user-interface-gui)
   * [Command Line Tool](#command-line-tool)
 * [Backend Development](#backend-development)
+  * [Access to ESA Datahub](#)
+  * [Query for Image Acquisition](#)
+  * [Download and Archiving](#)
+  * [Preprocessing](#)
 * [Appendix](#appendix)
   * [Contributing](#contributing)
   * [Authors](#authors)
@@ -78,7 +82,7 @@ Installing snappy
 Link to readme install file?
 ```
 
-## Guide & Example
+## Guide and Example
 
 ```
 GUI
