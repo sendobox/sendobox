@@ -13,10 +13,8 @@ The software is licensed under the GNU General Public License. If you use this p
 ## Table of Contents
 
 * [Gettings Started](#getting-started)
-* [Dependencies](#dependencies)
-* [Installation](#installation)
-  * [Requirements](#requirements)
-  * [Built With](#built-with)
+  * [Dependencies](#dependencies)
+  * [Installation](#installation)
 * [Guide and Example](#guide-and-example)
 * [Frontend Development](#frontend-development)
   * [Graphical User Interface GUI](#graphical-user-interface-gui)
