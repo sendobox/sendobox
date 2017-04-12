@@ -10,13 +10,10 @@ sendobox is a tool for downloading a vast amount of Sentinel satellite data in a
 
 The software is licensed under the GNU General Public License. If you use this project for your research, please cite this accordingly.
 
-## [create an anchor](#anchors-in-markdown)
+## Table of contents
 
-test
-
-#anchors-in-markdown
-
-test
+* [Gettings Started](#getting-started)
+* [Dependencies](#depedencies)
 
 ## Getting Started
 
