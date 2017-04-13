@@ -114,11 +114,40 @@ $ ./snappy-conf <python-exe>
 ```
 Windows:
 ```
-$ snappy-conf <python-exe>
+$ snappy-conf <python-exe> 
 ```
 
-2. Test if snappy installation was succesful.
+2. Test if snappy installation was succesful
+```
+$ cd <snappy-dir>
+$ <python-exe>     (start your Python interpreter)
+```
+Then try the following code:
+```
+from snappy import ProductIO
+p = ProductIO.readProduct('snappy/testdata/MER_FRS_L1B_SUBSET.dim')
+list(p.getBandNames())
+```
 
+3. Configure python-snappy path
+
+To effectively use the SNAP Python API from Python, the  snappy module must be detectable by your Python interpreter. There are a number of ways to achieve this. To make snappy permanently accessible, you could install it into your Python installation. On the command line (shell, terminal window on Unixes, cmd on Windows), type
+```
+$ cd <snappy-dir>/snappy
+$ <python-exe> setup.py install
+```
+
+If you encounter any problems with this approach, you can also try to copy the <snappy-dir>/snappy directory directly into the site-packages directory of your Python installation. Secondly, you could also temporarily or permanently set your PYTHONPATH environment variable:
+
+export PYTHONPATH=$PYTHONPATH:<snappy-dir>   (on Unix OS)
+set PYTHONPATH=%PYTHONPATH%;<snappy-dir>    (on Windows OS)
+
+Finally, you could also append <snappy-dir> to the sys.path variable in your Python code before importing snappy:
+```
+import sys
+sys.path.append('<snappy-dir>') # or sys.path.insert(1, '<snappy-dir>')
+import snappy
+```
 
 
 ## Guide and Example
