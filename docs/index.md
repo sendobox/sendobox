@@ -156,6 +156,7 @@ import snappy
 The tutorial folder provides a working paramter file and geojson file to test the software via the gui or from the command line.
 
 **Graphical User Interface - GUI**
+
 The gui gives an option to load and save a paramter file and the following download options: 
 
 For saving the metadata for both Sentinel 1 and Sentinel 2 data in two seperate .csv files:
@@ -291,15 +292,36 @@ For Sentinel-1 data additionally the Polarization is written in the metadata fil
 
 **Visualizing queried Footprints**
 
+For each queried image a footprint can be plotted to see if it alligns with the selected area of interest. The query for
+Sentinel data only uses an intersection of the aoi and the footprint for its queried data and not if the aoi is fully contained 
+in the footprint.
+
+Using `matplotlib` a figure is plotted to show all images with its ID and the area of interest.
+
 **Download queried Sentinel Data**
+
+The queried images are downloaded into an archive. Depending on the platform a folder is created that stores all downloaded
+images.
+
+`api.download(properties[i]['product_id'], output_path+'\Sentinel-1', check_existing=True)`
+
+To check if the download is complete, the included `check_existing` checksum md5 UUID comparisson is done to ensure the downloaded file is not corrupt and already downloaded.
+If True and a fully downloaded file with the same name exists on the disk, verify its integrity using its MD5 checksum. Re-download in case of non-matching checksums.
+
+In this case we use the `SubsetOp` and the `MosaicOp` auf SNAP to process the data in the archive.
 
 ### Preprocessing
 
 **SNAP-Python Interface `snappy.py`**
 
+The preprocessing is handled by ESA's SNAP toolbox via the python interface `snappy.py`. All operators from SNAP are 
+available to use via the interface in python.
+
 **Resampling Sentinel 2 Data**
 
 **Polarisation Sentinel 1 Data**
+
+**Creating a subset for the aoi** 
 
 **Mosaic for two imagaes**
 
