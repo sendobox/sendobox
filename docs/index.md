@@ -157,11 +157,17 @@ The tutorial folder provides a working paramter file and geojson file to test th
 
 1. GUI
 
-The gui gives an option to load and save a paramter file. Download options are 
+The gui gives an option to load and save a paramter file.
+* Download options: 
 
+```Save Metadata``` for save the metadata for both Sentinel 1 and Sentinel 2 data in two seperate .csv files.
 
-![GUI](/images/GUI.png)
-Format: ![Alt Text](url)
+```Plot Footprints``` for plotting the footprints of the queried data.
+
+```Download test image``` download the first image of the queried data.
+
+```Download all``` download all queried data.
+
 
 2. Command Line
 
