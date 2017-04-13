@@ -62,7 +62,8 @@ sentinelsat
 ## Built With
 
 * [python2.7](https://www.python.org/download/releases/2.7/) - sendobox is only compatible with python 2.7 right now
-* [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Access to the API of Copernicus Data Hub
+* [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Access to the API of Copernicus
+  Data Hub Kersten, Wille Marcel, Martin Valgur, & Caio Castro. (2016). ibamacsr/sentinelsat: v0.7 [Data set]. Zenodo. http://doi.org/10.5281/zenodo.154460
 
 ### Whishlist
 
@@ -103,6 +104,7 @@ The software is licensed under the GNU General Public License v3 or later. If yo
 
 * [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Access to the API of Copernicus Data Hub
 * [Andreas Baumann](http://forum.step.esa.int/users/abgbaumann/activity) - Adaption of the mosaic procedure
+  Kersten, Wille Marcel, Martin Valgur, & Caio Castro. (2016). ibamacsr/sentinelsat: v0.7 [Data set]. Zenodo. http://doi.org/10.5281/zenodo.154460
 * Hat tip to anyone who's code was used
 
 
