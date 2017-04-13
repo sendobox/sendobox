@@ -155,8 +155,7 @@ import snappy
 
 The tutorial folder provides a working paramter file and geojson file to test the software via the gui or from the command line.
 
-1. GUI
-
+**Graphical User Interface - GUI**
 The gui gives an option to load and save a paramter file and the following download options: 
 
 For saving the metadata for both Sentinel 1 and Sentinel 2 data in two seperate .csv files:
@@ -187,8 +186,7 @@ Create a mosaic with two images from fitting orbits:
 Create a subset for the area of intrest: 
 ```subset``` 
 
-
-2. Command Line
+**Command Line**
 
 Launch the `console.py` file and the command line tool will ask for the path to your input.txt parameter file. Once
 specified the download and preprocessing will start automatically.
@@ -278,7 +276,7 @@ Several options are given for download:
 Downloaded images and metadata are saved in a certain folder structure. Two folders are created:
 One for Sentinel-1 and for Sentinel-2 data.
 
-1. Save relevant Metadata
+**Save relevant Metadata**
 
 For each folder (or platform, respectively) a metadata file (.csv) is created. For Sentinel-2 data the
 following parameters are saved:
@@ -291,22 +289,24 @@ following parameters are saved:
 * Product ID
 For Sentinel-1 data additionally the Polarization is written in the metadata file.
 
-2. Visualizing queried Footprints
+**Visualizing queried Footprints**
 
-3. Download queried Sentinel Data
+**Download queried Sentinel Data**
 
 ### Preprocessing
 
-1. SNAP-Python Interface `snappy.py`
+**SNAP-Python Interface `snappy.py`**
 
-2. Resampling Sentinel 2 Data
+**Resampling Sentinel 2 Data**
 
-3. Polarisation Sentinel 1 Data
+**Polarisation Sentinel 1 Data**
 
-4. Mosaic for two imagaes
+**Mosaic for two imagaes**
 
 ## Appendix
 [Table of Contents](#table-of-contents)
+
+### Whishlist
 
 ### Contributing
 
