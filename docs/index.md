@@ -228,10 +228,63 @@ It should be noted that the command line tool is due for some changes, to make i
 [Table of Contents](#table-of-contents)
 
 ### Access to ESA Datahub
+
+In order to use the functionalities of the Sentinel Scientific Data Hub a registration on their webpage
+is necessary: [scihub](https://scihub.copernicus.eu/dhus/). Afterwards, login dates (username and password) 
+can be used for the download toolbox. In this part only username and password inputs are requested. 
+Input errors are checked when running the query and an error message will be shown in the query status bar.
+
 ### Query for Image Acquisition
+
+The next step is querying images using a certain area of interest and time period. First the Sentinel
+API needs to be accessed using the queried login dates. Since the API Hub is dedicated to users
+of scripting interfaces, this is the preferred API to use. If the API Hub cannot be accessed the Open
+Hub is used instead. For querying images an area of interest needs to be selected. So far, this is
+realized using a .geojson file. On the webpage geojson.io a geojson file can intuitively be created
+by dragging out a rectangle.
+Start and end dates are entered in the form of dd.mm.yyyy. Furthermore, a specific platform can
+be entered e.g. Sentinel-1 or Sentinel-2. If none or both checkboxes are checked, images of both platforms are queried. 
+Optionally the maximum cloud cover can be entered as a percentage e.g.
+30. The number of images found by the query is shown in the status bar. For further information
+about the images (footprints and metadata) the download section can be used.
+
 ### Download and Archiving
-#### Save relevant Metadata
+
+Several options are given for download:
+* Download metadata
+* Plot Footprints
+* Download a single image using its product id
+* Download all images from the query
+
+Downloaded images and metadata are saved in a certain folder structure. Two folders are created:
+One for Sentinel-1 and for Sentinel-2 data.
+
+1. Save relevant Metadata
+
+For each folder (or platform, respectively) a metadata file (.csv) is created. For Sentinel-2 data the
+following parameters are saved:
+* ID (starting from 1)
+* Image ID
+* Mode
+* Product Type
+* Orbit Direction
+* Sensing Date
+* Product ID
+For Sentinel-1 data additionally the Polarization is written in the metadata file.
+
+2. Visualizing queried Footprints
+
+3. Download queried Sentinel Data
+
 ### Preprocessing
+
+1. SNAP-Python Interface `snappy.py`
+
+2. Resampling Sentinel 2 Data
+
+3. Polarisation Sentinel 1 Data
+
+4. Mosaic for two imagaes
 
 ## Appendix
 [Table of Contents](#table-of-contents)
