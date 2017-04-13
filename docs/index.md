@@ -159,18 +159,33 @@ The tutorial folder provides a working paramter file and geojson file to test th
 
 The gui gives an option to load and save a paramter file and the following download options: 
 
-```Save Metadata``` for save the metadata for both Sentinel 1 and Sentinel 2 data in two seperate .csv files.
+For saving the metadata for both Sentinel 1 and Sentinel 2 data in two seperate .csv files:
+```
+Save Metadata
+```
 
-```Plot Footprints``` for plotting the footprints of the queried data.
+For plotting the footprints of the queried data:
+```
+Plot Footprints
+``` 
 
-```Download test image``` download the first image of the queried data.
+Downloading the first image of the queried data:
+```
+Download test image
+``` 
 
-```Download all``` download all queried data.
+Download all queried data:
+```
+Download all
+``` 
 
 The preprocesisng options are:
 
-```mosaic``` create a mosaic with two images from fitting orbits.
-```subset``` create a subset for the area of intrest.
+Create a mosaic with two images from fitting orbits:
+```mosaic``` 
+
+Create a subset for the area of intrest: 
+```subset``` 
 
 
 2. Command Line
@@ -242,10 +257,14 @@ of scripting interfaces, this is the preferred API to use. If the API Hub cannot
 Hub is used instead. For querying images an area of interest needs to be selected. So far, this is
 realized using a .geojson file. On the webpage geojson.io a geojson file can intuitively be created
 by dragging out a rectangle.
+
+
 Start and end dates are entered in the form of dd.mm.yyyy. Furthermore, a specific platform can
 be entered e.g. Sentinel-1 or Sentinel-2. If none or both checkboxes are checked, images of both platforms are queried. 
 Optionally the maximum cloud cover can be entered as a percentage e.g.
-30. The number of images found by the query is shown in the status bar. For further information
+30%. 
+
+The number of images found by the query is shown in the status bar. For further information
 about the images (footprints and metadata) the download section can be used.
 
 ### Download and Archiving
