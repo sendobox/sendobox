@@ -6,7 +6,10 @@ Sentinel Download ToolBox (SenDoBox) - A batch processing tool for downloading S
 
 ## About
 
-sendobox is a tool for downloading a vast amount of Sentinel satellite data in an easy and structured way. With a specified area of intrest (aoi) and a starting and end date, all queried Sentinel images can be downloaded in one go. Some preprocessing functions for creating subsets and mosaic are also included.
+sendobox is a tool for downloading a vast amount of Sentinel satellite data in an easy and structured way. 
+With a specified area of intrest (aoi) and a starting and end date, all queried Sentinel images can be downloaded in one go. 
+Some preprocessing functions for creating subsets and mosaic are also included. The programm can be operated with a graphical user interface 
+or from the command line. All paramters for the query of the satellite data are stored in one singe input text file.
 
 The software is licensed under the GNU General Public License. If you use this project for your research, please cite this accordingly.
 
@@ -35,23 +38,38 @@ The software is licensed under the GNU General Public License. If you use this p
 ## Getting Started
 [Table of Contents](#table-of-contents)
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get your copy of the project up and running on your local machine for development and testing purposes.
 
-* First get all dependencies working.
-* It is recommended to also install snappy, a link between python and SNAP (ESA Toolbox), for preprocessing the downloaded data.
+* First get all dependencies working [Requirements](#requirements).
+* It is recommended to also install snappy, a link between python and SNAP (ESA Toolbox), for preprocessing the downloaded data. 
+A installation guide can be found in the [Installation](#installation) section.
 
-* Area of interest (aoi) from [geojson](http://geojson.io/#map=2/20.0/0.0)
+* Specify your area of interest (aoi) from [geojson](http://geojson.io/#map=2/20.0/0.0) and store it in your sendobox directory.
 * Configure your parameter textfile:
 
-```
-1 User
-2 Password
-...
-```
+| Line  | Parameter |
+| ------------- | ------------- |
+| 1  | Username  |
+| 2  | Password  |
+| 3  | start date dd.mm.yyyy  |
+| 4  | end date dd.mm.yyyy  |
+| 5  | area of intrest  |
+| 6  | platform  |
+| 7  | maximum cloud coverage  |
+| 8  | download path  |
+| 9  | image id  |
+| 10  | download options  |
+| 11  | preprocessing path  |
+| 12  | preprocessing options  |
+
+An example can be found in the turorial folder of sendobox.
 
 ### Dependencies
 
 #### Requirements
+
+These packages can be installed speratly or with the requirements.txt file.
+
 ```
 pip install -r requirements.txt
 ```
@@ -68,21 +86,43 @@ sentinelsat
 
 #### Built With:
 
-* [python2.7](https://www.python.org/download/releases/2.7/) - The framework used
+* [python2.7](https://www.python.org/download/releases/2.7/) - sendobox is only compatible with python 2.7 right now
 * [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Access to the API of Copernicus Data Hub
 
 ### Installation
 
-A step by step series of examples that tell you have to get a development env running. 
+The snappy.py installation is only required if you want to take advantage of the preprocessing features for creating a 
+subset or a mosaic. Following is a step by step series that tell you how to get a development env running. SNAP-python
+is a link between the ESA SNAP Toolbox and python, which sendobox uses to create subsets and mosaics.
 
-Installing snappy
+Configure Python to use the SNAP-Python (snappy) interface:
 
+* The easiest way to configure your Python installation for the usage SNAP-Python (snappy) interface is to do it 
+during the installation of SNAP. Within the installer it you can simply activate a checkbox and select the path to the python executable.
+
+* If you already have SNAP installed and want to add the SNAP-python interface, you have to generate the Python 
+module snappy configured for the current SNAP installation and your Python interpreter <python-exe> into the .snap/snap-python
+directory of the user home directory.
+
+1. In your terminal go to the bin directory of SNAP
 ```
-Link to readme install file?
+$ cd <snap-install-dir>/bin
 ```
+Unix:
+```
+$ ./snappy-conf <python-exe>
+```
+Windows:
+```
+$ snappy-conf <python-exe>
+```
+
+2. Test if snappy installation was succesful.
+
+
 
 ## Guide and Example
-
+[Table of Contents](#table-of-contents)
 ```
 GUI
 ```
@@ -92,15 +132,15 @@ console
 ```
 
 ## Frontend Development
-
+[Table of Contents](#table-of-contents)
 ### Graphical User Interface GUI
 
 ### Command Line Tool
 
 ## Backend Development
-
+[Table of Contents](#table-of-contents)
 ## Appendix
-
+[Table of Contents](#table-of-contents)
 
 ### Contributing
 
