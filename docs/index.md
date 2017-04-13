@@ -319,16 +319,43 @@ available to use via the interface in python.
 
 **Resampling Sentinel 2 Data**
 
+The bands of Sentinel 2 come in three different ground resolutions of 10m, 20m and 60m. To create a subset for all 12 Bands
+a resample method has to be done. In the case of sendobox all bands are resampled to 10m with the nearest neighbor operator.
+
 **Polarisation Sentinel 1 Data**
+
+For Sentinel 1 data the polarization has to be accounted for before one can create a subset. Right now only HH polarized data works since that
+is the most common polarization. That should change with the next updates.
 
 **Creating a subset for the aoi** 
 
+The geojson file from the parameter file is used to create the subset. The subset is written into the directory as its original file as
+a geotiff file.
+
 **Mosaic for two imagaes**
+
+The mosaicing is using two images from the archive directory to create a mosaic of the area of intrest if not all of the image is
+contained in the aoi.
+
+The mosaic procedure is using two 
 
 ## Appendix
 [Table of Contents](#table-of-contents)
 
 ### Whishlist
+
+In future updates we want to adress the following improvements, problems and bugs:
+
+* Update the `console.py` to be more functional and add a help argument.
+* Improve the documentation with html elements, pictures and more in depth analysis including code commentary.
+* Work on the preprocessing stabillity.
+  * Subset for all polarizations.
+  * Choose from all available resample options.
+  * Make output format available in the parameter file.
+  * Mosaic for all 12 Bands.
+* Only download datasets contained in the area of intrest and not intersecting the aoi.
+* Rewrite the code into objective oriented programming using clases in a seperate oop branch.
+
 
 ### Contributing
 
@@ -337,7 +364,7 @@ Contributions (bug reports, bug fixes, improvements, etc.) are very welcome and 
 ### Authors
 
 * **Buergmann Tatjana** - *Initial work* 
-* **Stark Thomas** - *Initial work* - [github](https://github.com/stark-t)
+* **Stark Thomas** - *Initial work* - [github profile](https://github.com/stark-t)
 
 * **Dr.-Ing. Michael Schmitt** - *Supervision*
 
