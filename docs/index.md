@@ -49,8 +49,8 @@ A installation guide can be found in the [Installation](#installation) section.
 
 | Line  | Parameter |
 | ------------- | ------------- |
-| 1  | Username  |
-| 2  | Password  |
+| 1  | username  |
+| 2  | password  |
 | 3  | start date dd.mm.yyyy  |
 | 4  | end date dd.mm.yyyy  |
 | 5  | area of intrest  |
@@ -152,13 +152,17 @@ import snappy
 
 ## Guide and Example
 [Table of Contents](#table-of-contents)
-```
-GUI
-```
 
-```
-console
-```
+The tutorial folder provides a working paramter file and geojson file to test the software via the gui or from the command line.
+
+1. GUI
+
+The gui gives an option to load and save a paramter file. Download options are 
+![GUI](/images/GUI.png)
+
+
+2. Command Line
+
 
 ## Frontend Development
 [Table of Contents](#table-of-contents)
