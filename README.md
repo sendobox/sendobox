@@ -17,9 +17,9 @@ The software is licensed under the GNU General Public License. If you use this p
 
 These instructions will get your copy of the project up and running on your local machine for development and testing purposes.
 
-* First get all dependencies working [Requirements](#requirements).
+* First get all dependencies working.
 * It is recommended to also install snappy, a link between python and SNAP (ESA Toolbox), for preprocessing the downloaded data. 
-A installation guide can be found in the [Installation](#installation) section.
+A installation guide can be found in the [Documentation sendobox.github.io](https://sendobox.github.io/sendobox/) und the installation section.
 
 * Specify your area of interest (aoi) from [geojson](http://geojson.io/#map=2/20.0/0.0) and store it in your sendobox directory.
 * Configure your parameter textfile:
