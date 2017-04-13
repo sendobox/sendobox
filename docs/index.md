@@ -23,10 +23,10 @@ The software is licensed under the GNU General Public License. If you use this p
   * [Graphical User Interface GUI](#graphical-user-interface-gui)
   * [Command Line Tool](#command-line-tool)
 * [Backend Development](#backend-development)
-  * [Access to ESA Datahub](#)
-  * [Query for Image Acquisition](#)
-  * [Download and Archiving](#)
-  * [Preprocessing](#)
+  * [Access to ESA Datahub](#access-to-esa-datahub)
+  * [Query for Image Acquisition](#query-for-image-acquisition)
+  * [Download and Archiving](#download-and-archiving)
+  * [Preprocessing](#preprocessing)
 * [Appendix](#appendix)
   * [Contributing](#contributing)
   * [Authors](#authors)
@@ -157,8 +157,7 @@ The tutorial folder provides a working paramter file and geojson file to test th
 
 1. GUI
 
-The gui gives an option to load and save a paramter file.
-* Download options: 
+The gui gives an option to load and save a paramter file and the following download options: 
 
 ```Save Metadata``` for save the metadata for both Sentinel 1 and Sentinel 2 data in two seperate .csv files.
 
@@ -168,18 +167,72 @@ The gui gives an option to load and save a paramter file.
 
 ```Download all``` download all queried data.
 
+The preprocesisng options are:
+
+```mosaic``` create a mosaic with two images from fitting orbits.
+```subset``` create a subset for the area of intrest.
+
 
 2. Command Line
+
+Launch the `console.py` file and the command line tool will ask for the path to your input.txt parameter file. Once
+specified the download and preprocessing will start automatically.
+
 
 
 ## Frontend Development
 [Table of Contents](#table-of-contents)
 ### Graphical User Interface GUI
 
+The Graphical User Interface (GUI) was implemented using the Python package Tkinter. All labels,
+buttons, checkboxes and textboxes were arranged in a grid layout.
+
+The Interface was split into 4 parts:
+* Login
+* Query
+* Download
+* Preprocessing
+
+For every part, there is a status bar where status and error messages are shown. After all entries
+have been made, there is an opportunity to save them in a configuration file (.txt) in order to reuse
+them for another query or download. Subsequently, the configuration can be reloaded and all ent-
+ries are automatically filled out. The configuration file can also be created manually using a specific
+convention (see table 3.1). The GUI python program imports python modules for the query, download and preprocessing 
+parts as well as a module for reading and writing entries and a module for
+loading and saving the configuration.
+
+| Line  | Parameter |
+| ------------- | ------------- |
+| 1  | username  |
+| 2  | password  |
+| 3  | start date dd.mm.yyyy  |
+| 4  | end date dd.mm.yyyy  |
+| 5  | area of intrest  |
+| 6  | platform  |
+| 7  | maximum cloud coverage  |
+| 8  | download path  |
+| 9  | image id  |
+| 10  | download options  |
+| 11  | preprocessing path  |
+| 12  | preprocessing options  |
+
 ### Command Line Tool
+
+Alternatively, there is a python program for using the same functions as implemented for the GUI
+using a simple console input for the path of the configuration file. Afterwards download and prepro-
+cessing starts automatically.
+
+It should be noted that the command line tool is due for some changes, to make it more stable as soon as possible.
 
 ## Backend Development
 [Table of Contents](#table-of-contents)
+
+### Access to ESA Datahub
+### Query for Image Acquisition
+### Download and Archiving
+#### Save relevant Metadata
+### Preprocessing
+
 ## Appendix
 [Table of Contents](#table-of-contents)
 
