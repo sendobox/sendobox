@@ -158,8 +158,10 @@ The tutorial folder provides a working paramter file and geojson file to test th
 1. GUI
 
 The gui gives an option to load and save a paramter file. Download options are 
-![GUI](/images/GUI.png)
 
+
+![GUI](/images/GUI.png)
+Format: ![Alt Text](url)
 
 2. Command Line
 
