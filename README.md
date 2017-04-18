@@ -88,7 +88,7 @@ Contributions (bug reports, bug fixes, improvements, etc.) are very welcome and 
 * **Buergmann Tatjana** - *Initial work* 
 * **Stark Thomas** - *Initial work* - [github](https://github.com/stark-t)
 
-* **Dr.-Ing. Michael Schmitt** - *Supervision*
+* **Dr. Michael Schmitt** - *Supervision*
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
