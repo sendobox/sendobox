@@ -1,8 +1,8 @@
 ########################################################################################################################
 #
 #   Toolbox for batch downloading and preprocessing of Sentinel satellite data from Sentinels Scientific Data Hub
-#   Contributors: Thomas Stark & Tatjana Buergmann (TU Munich)
-#   Date: March 29, 2017
+#   Contributors: Thomas Stark & Tatjana Buergmann, TU Munich
+#   Date: January 18, 2017
 #
 ########################################################################################################################
 
@@ -41,51 +41,125 @@ def start(image_path, aoi, preprocessing_options, preprocessing_status=None):
             preprocessing_status.set('Please select a preproccessing option.')
         else:
             pass  
-    
-def subset(image_path, aoi):
-    path = image_path
-    for folder in os.listdir(path):
+
+        
+def ziparchive(image_path, aoi):
+    for folder in os.listdir(image_path):
         if folder.endswith('.zip'):
-            zip_ref = zipfile.ZipFile(path + folder, 'r')
-            zip_ref.extractall(path)
+            zip_ref = zipfile.ZipFile(image_path + folder, 'r')
+            zip_ref.extractall(image_path)
             zip_ref.close()
-    for folder in os.listdir(path):
-        output = path + folder + '/'
-        # Read Data____________________________________________________________
-        if folder.endswith('.SAFE'):
-            for file in os.listdir(output):
-                if file.endswith('.xml') and file!='INSPIRE.xml': sentinel = ProductIO.readProduct(output+file)  
-            # Get Band Names
-            band_names = sentinel.getBandNames()
-            print("Bands:       %s" % (list(band_names)))
-            # Preprocessing ___________________________________________________
-            # Resampling
-            parameters = HashMap()
-            parameters.put('targetResolution', 10)
-            product_resample = snappy.GPF.createProduct('Resample', parameters, sentinel)
-            # Geojson to wkt
-            with open(aoi) as f:
-                    gjson = json.load(f)       
-            for feature in gjson['features']:
-                polygon = (feature['geometry'])
-            str_poly = json.dumps(polygon)
-            gjson_poly = geojson.loads(str_poly)
-            poly_shp = shape(gjson_poly)
-            wkt = poly_shp.wkt
-            # Subset
-            geom = WKTReader().read(wkt)
-            op = SubsetOp()
-            op.setSourceProduct(product_resample)
-            op.setGeoRegion(geom)
-            product_sub = op.getTargetProduct()            
-            # Write Data_______________________________________________________            
-            print("SUBSET: Writing.")
-            subset = output+'_subset_'
-            ProductIO.writeProduct(product_sub, subset, "GeoTIFF")
+                
+    
+def subset(image_path, aoi): 
+    for folder in os.listdir(image_path):
+        # Zipped Folder________________________________________________________
+        if folder.endswith('.zip'): 
+            ziparchive(image_path, aoi)
+            # Use current path for subset
+            path = image_path + folder + '/'
+            # Check if Sentine-1 or Sentinel-2
+            if folder.startswith('S1'):
+                for file in os.listdir(path):
+                    if file.endswith('manifest.safe') and "_GRD" in folder: subset_s1(path, file, aoi)
+            if folder.startswith('S2') and folder.endswith('.SAFE'):
+                for file in os.listdir(path):
+                    if file.endswith('.xml') and file!='INSPIRE.xml': subset_s2(path, file, aoi)
+                    
+        # Unzipped Folder______________________________________________________
+        # Use current path for subset
+        path = image_path + folder + '/'
+        # Check if Sentine-1 or Sentinel-2
+        if folder.startswith('S1'):
+            for file in os.listdir(path):
+                if file.endswith('manifest.safe') and "_GRD" in folder: subset_s1(path, file, aoi)
+        if folder.startswith('S2') and folder.endswith('.SAFE'):
+            for file in os.listdir(path):
+                if file.endswith('.xml') and file!='INSPIRE.xml': subset_s2(path, file, aoi)
             
-            print("SUBSET: Done.")
+                
+def subset_s2(path, file, aoi):
+    # Read Data________________________________________________________________
+    print("SUBSET: Read Product...")
+    sentinel = ProductIO.readProduct(path+file)
+    print("SUBSET: Done reading!")
+    # Get Band Names and print info
+    name = sentinel.getName()
+    print("SUBSET: Image ID:        %s" % name)
+    band_names = sentinel.getBandNames()
+    print("SUBSET: Bands:       %s" % (list(band_names)))
+    # Preprocessing ___________________________________________________________
+    # Resampling
+    parameters = HashMap()
+    parameters.put('targetResolution', 10)
+    print("SUBSET: resample target resolution: 10m")
+    product_resample = snappy.GPF.createProduct('Resample', parameters, sentinel)
+    # Geojson to wkt
+    with open(aoi) as f:
+            gjson = json.load(f)       
+    for feature in gjson['features']:
+        polygon = (feature['geometry'])
+    str_poly = json.dumps(polygon)
+    gjson_poly = geojson.loads(str_poly)
+    poly_shp = shape(gjson_poly)
+    wkt = poly_shp.wkt
+    # Subset
+    geom = WKTReader().read(wkt)
+    op = SubsetOp()
+    op.setSourceProduct(product_resample)
+    op.setGeoRegion(geom)
+    product_sub = op.getTargetProduct()            
+    # Write Data_______________________________________________________            
+    print("SUBSET: Writing subset.")
+    subset = path + name + '_subset_'
+    ProductIO.writeProduct(product_sub, subset, "BEAM-DIMAP")    
+    print("SUBSET: Done and saved in %s" % path)
 
-
+def subset_s1(path, file, aoi):
+    # Read Data________________________________________________________________
+    print("SUBSET: Read Product...")
+    sentinel = ProductIO.readProduct(path+file)
+    print("SUBSET: Done reading!")
+    name = sentinel.getName()
+    print(name)
+    # Get Polarisation and Name
+    pols = ['VV'] # WISHLIST only VV works right now, should be changed to HH and VH
+    for p in pols:
+        print("SUBSET: calibration:   %s" % p)
+        polarization = p
+        # Preprocessing________________________________________________________
+        # Calibration
+        parameters = HashMap() 
+        parameters.put('outputSigmaBand', True) 
+        parameters.put('sourceBands', 'Intensity_' + polarization) 
+        parameters.put('selectedPolarisations', polarization) 
+        parameters.put('outputImageScaleInDb', False)      
+        calib = path + file + "_calibrate_" + polarization 
+        target_0 = GPF.createProduct("Calibration", parameters, sentinel) 
+        ProductIO.writeProduct(target_0, calib, 'BEAM-DIMAP')
+        calibration = ProductIO.readProduct(calib + ".dim")
+        # Geojson to wkt
+        with open(aoi) as f:
+                gjson = json.load(f)       
+        for feature in gjson['features']:
+            polygon = (feature['geometry'])
+        str_poly = json.dumps(polygon)
+        gjson_poly = geojson.loads(str_poly)
+        poly_shp = shape(gjson_poly)
+        wkt = poly_shp.wkt
+        # Subset
+        geom = WKTReader().read(wkt)
+        subsettings = HashMap()
+        subsettings.put('geoRegion', geom)
+        subsettings.put('outputImageScaleInDb', False)
+        # Write Data_______________________________________________________            
+        print("SUBSET: Writing subset.")  
+        subset = path + file + "_subset_" + polarization
+        target_1 = GPF.createProduct("Subset", subsettings, calibration)
+        ProductIO.writeProduct(target_1, subset, 'BEAM-DIMAP')
+        print("SUBSET: Done and saved in %s" % path)
+        
+        
 def mosaic(image_path, aoi):   
     path = image_path
     # Unzip Downloaded Data
@@ -127,7 +201,7 @@ def mosaic(image_path, aoi):
     print("Bands:       %s" % (list(band_names)))  
     # Mosaic for every Band              
     bands      = {'B2': 'B2'}
-    para       = {'northBound': NE[1], 'eastBound': NE[0], 'southBound': SW[1], 'westBound': SW[0]-0.05, \
+    para       = {'northBound': NE[1], 'eastBound': NE[0], 'southBound': SW[1], 'westBound': SW[0], \
                   'pixelSizeX': 0.0001, 'pixelSizeY': 0.0001}    
     # Write Data_______________________________________________________________
     mosaicOp().mosaic(products, trg_path, bands, para)
