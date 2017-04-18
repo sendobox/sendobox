@@ -7,9 +7,9 @@ Sentinel Download ToolBox (SenDoBox) - A batch processing tool for downloading S
 ## About
 
 sendobox is a tool for downloading a vast amount of Sentinel satellite data in an easy and structured way. 
-With a specified area of intrest (aoi) and a starting and end date, all queried Sentinel images can be downloaded in one go. 
-Some preprocessing functions for creating subsets and mosaic are also included. The programm can be operated with a graphical user interface 
-or from the command line. All paramters for the query of the satellite data are stored in one singe input text file.
+With a specified area of interest (aoi) and a starting and end date, all queried Sentinel images can be downloaded in one go. 
+Some preprocessing functions for creating subsets and mosaic are also included. The program can be operated with a graphical user interface 
+or from the command line. All parameters for the query of the satellite data are stored in one singe input text file.
 
 The software is licensed under the GNU General Public License. If you use this project for your research, please cite this accordingly.
 
@@ -22,7 +22,7 @@ These instructions will get your copy of the project up and running on your loca
 A installation guide can be found in the [Documentation sendobox.github.io](https://sendobox.github.io/sendobox/) und the installation section.
 
 * Specify your area of interest (aoi) from [geojson](http://geojson.io/#map=2/20.0/0.0) and store it in your sendobox directory.
-* Configure your parameter textfile:
+* Configure your parameter text file:
 
 | Line  | Parameter |
 | ------------- | ------------- |
@@ -30,7 +30,7 @@ A installation guide can be found in the [Documentation sendobox.github.io](http
 | 2  | password  |
 | 3  | start date dd.mm.yyyy  |
 | 4  | end date dd.mm.yyyy  |
-| 5  | area of intrest  |
+| 5  | area of interest  |
 | 6  | platform  |
 | 7  | maximum cloud coverage  |
 | 8  | download path  |
@@ -39,11 +39,11 @@ A installation guide can be found in the [Documentation sendobox.github.io](http
 | 11  | preprocessing path  |
 | 12  | preprocessing options  |
 
-An example can be found in the turorial folder of sendobox.
+An example can be found in the tutorial folder of sendobox.
 
 ### Dependencies
 
-These packages can be installed speratly or with the requirements.txt file.
+These packages can be installed separately or with the requirements.txt file.
 
 ```
 pip install -r requirements.txt
@@ -66,17 +66,17 @@ sentinelsat
 
 ### Whishlist
 
-In future updates we want to adress the following improvements, problems and bugs:
+In future updates we want to address the following improvements, problems and bugs:
  
 * Update the `console.py` to be more functional and add a help argument.
 * Improve the documentation with html elements, pictures and more in depth analysis including code commentary.
-* Work on the preprocessing stabillity.
+* Work on the preprocessing stability.
   * Subset for all polarizations.
   * Choose from all available resample options.
   * Make output format available in the parameter file.
   * Mosaic for all 12 Bands.
-* Only download datasets contained in the area of intrest and not intersecting the aoi.
-* Rewrite the code into objective oriented programming using clases in a seperate oop branch.
+* Only download datasets contained in the area of interest and not intersecting the aoi.
+* Rewrite the code into objective oriented programming using classes in a separate oop branch.
 
 
 ## Contributing
