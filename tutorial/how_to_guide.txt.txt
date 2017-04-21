@@ -1,0 +1,8 @@
+1. Create Account on https://scihub.copernicus.eu/dhus/#/self-registration
+2. Update input.txt 
+	Username and Password
+	sendobox directory
+	download directory
+3. Run either console.py or gui.py and load input.txt
+4. This procedure plots all footprints for Sentinel-2 images with less than 20% cloud coverage
+   over a dam in ethiopia.
