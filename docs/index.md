@@ -91,6 +91,38 @@ sentinelsat
 
 ### Installation
 
+* Installation Repository
+
+Download the zip folder or clone repository.
+
+```
+$ git clone https://github.com/sendobox/sendobox.git
+```
+
+Check if all dependencies are installed and launch a python interpreter or a python console.
+
+1. Console:
+```
+cd <sendobox-clone-dir>
+```
+```
+python console.py
+```
+```
+Please type the path of your .txt configuration file: <sendobox-input.txt-dir>
+```
+2. GUI:
+```
+cd <sendobox-clone-dir>
+```
+```
+python gui.py
+```
+Load or create your own `input.txt` file.
+
+
+* Installation SNAP-Python
+
 The snappy.py installation is only required if you want to take advantage of the preprocessing features for creating a 
 subset or a mosaic. Following is a step by step series that tell you how to get a development env running. SNAP-python
 is a link between the ESA SNAP Toolbox and python, which sendobox uses to create subsets and mosaics.
