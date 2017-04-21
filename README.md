@@ -51,13 +51,12 @@ pip install -r requirements.txt
 
 List all dependencies:
 
-```
-matplotlib
-snappy
-geojson
-shapely
-sentinelsat
-```
+* [matplotlib](https://matplotlib.org/users/installing.html)
+* [snappy](https://senbox.atlassian.net/wiki/display/SNAP/Configure+Python+to+use+the+SNAP-Python+%28snappy%29+interface)
+* [geojson](https://pypi.python.org/pypi/geojson#installation)
+* [shapely](https://pypi.python.org/pypi/Shapely)
+* [sentinelsat](https://github.com/ibamacsr/sentinelsat)
+
 
 ### Installation Repository
 
