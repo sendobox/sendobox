@@ -59,6 +59,35 @@ shapely
 sentinelsat
 ```
 
+### Installation Repository
+
+Download the zip folder or clone repository.
+
+```
+$ git clone https://github.com/sendobox/sendobox.git
+```
+
+Check if all dependencies are installed and launch a python interpreter or a python console.
+
+1. Console:
+```
+$ cd <sendobox-clone-dir>
+```
+```
+$ python console.py
+```
+```
+$ Please type the path of your .txt configuration file: <sendobox-input.txt-dir>
+```
+2. GUI:
+```
+$ cd <sendobox-clone-dir>
+```
+```
+$ python gui.py
+```
+Load or create your own `input.txt` file.
+
 ## Built With
 
 * [python2.7](https://www.python.org/download/releases/2.7/) - sendobox is only compatible with python 2.7 right now
