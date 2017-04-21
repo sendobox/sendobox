@@ -1,0 +1,10 @@
+USERNAME
+PASSWORD
+20170101
+20171001
+<sendobox-dir>/tutorial/map.geojson
+Sentinel-2
+20
+<Download-path-dir>
+
+plot_footprints
