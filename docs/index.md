@@ -103,20 +103,20 @@ Check if all dependencies are installed and launch a python interpreter or a pyt
 
 1. Console:
 ```
-cd <sendobox-clone-dir>
+$ cd <sendobox-clone-dir>
 ```
 ```
-python console.py
+$ python console.py
 ```
 ```
-Please type the path of your .txt configuration file: <sendobox-input.txt-dir>
+$ Please type the path of your .txt configuration file: <sendobox-input.txt-dir>
 ```
 2. GUI:
 ```
-cd <sendobox-clone-dir>
+$ cd <sendobox-clone-dir>
 ```
 ```
-python gui.py
+$ python gui.py
 ```
 Load or create your own `input.txt` file.
 
