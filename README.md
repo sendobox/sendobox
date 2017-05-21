@@ -18,6 +18,7 @@ The software is licensed under the GNU General Public License. If you use this p
 These instructions will get your copy of the project up and running on your local machine for development and testing purposes.
 
 * First get all dependencies working.
+* Sendobox is build with python2.7. For guaranteed working order it is adviced to also use python 2.7. 
 * It is recommended to also install snappy, a link between python and SNAP (ESA Toolbox), for preprocessing the downloaded data. 
 A installation guide can be found in the [Documentation sendobox.github.io](https://sendobox.github.io/sendobox/) und the installation section.
 
@@ -105,6 +106,7 @@ In future updates we want to address the following improvements, problems and bu
   * Mosaic for all 12 Bands.
 * Only download datasets contained in the area of interest and not intersecting the aoi.
 * Rewrite the code into objective oriented programming using classes in a separate oop branch.
+* Port code to seperated Python 3 branch.
 
 
 ## Contributing
