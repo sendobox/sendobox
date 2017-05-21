@@ -129,7 +129,7 @@ The software is licensed under the GNU General Public License v3 or later. If yo
 
 ## Acknowledgments
 
-* [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Kersten, Wille Marcel, Martin Valgur, & Caio Castro. (2016). ibamacsr/sentinelsat: v0.7 [Data set]. Zenodo. http://doi.org/10.5281/zenodo.154460
+* [sentinelsat](https://github.com/ibamacsr/sentinelsat) - Marcel Wille; Kersten Clauss; Martin Valgur; Caio Castro. (2016). ibamacsr/sentinelsat: v0.7 [Data set]. Zenodo. http://doi.org/10.5281/zenodo.154460
 * [Andreas Baumann](http://forum.step.esa.int/users/abgbaumann/activity) - Adaption of the mosaic procedure
 
 
